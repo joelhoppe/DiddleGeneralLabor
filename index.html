@@ -8,6 +8,14 @@
 <meta property="og:title" content="Diddle General Labor — Rector, AR">
 <meta property="og:description" content="Junk removal, hauling, cleanouts, and general labor. Free estimates — call or text (870) 595-4718.">
 <meta property="og:type" content="website">
+<meta name="geo.region" content="US-AR">
+<meta name="geo.placename" content="Rector, Arkansas">
+<meta name="theme-color" content="#1E2B22" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#10160F" media="(prefers-color-scheme: dark)">
+<!-- After the site is live on its final domain, uncomment and set:
+<link rel="canonical" href="https://YOUR-DOMAIN-HERE/">
+<meta property="og:url" content="https://YOUR-DOMAIN-HERE/">
+-->
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛻</text></svg>">
 <script type="application/ld+json">
 {
@@ -23,6 +31,39 @@
     "addressCountry": "US"
   },
   "areaServed": ["Rector AR", "Piggott AR", "Marmaduke AR", "Paragould AR", "Greenway AR", "Pollard AR", "St. Francis AR", "Kennett MO"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does junk removal cost?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Every job is different, so every job gets a free estimate. Price depends mostly on how much there is and how hard it is to get to. Text a photo of the pile to (870) 595-4718 for a fast quote."}
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to be home during the junk removal?",
+      "acceptedAnswer": {"@type": "Answer", "text": "No. As long as the stuff is accessible — garage open, gate unlocked, or pile at the curb — the job gets done and you get a photo when it's finished."}
+    },
+    {
+      "@type": "Question",
+      "name": "How fast can you get here?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Often same-day or next-day, depending on the schedule. Storm cleanup and rental turnovers on a deadline get priority."}
+    },
+    {
+      "@type": "Question",
+      "name": "Is there anything you won't take?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Hazardous materials such as chemicals, paint, and asbestos have to go through proper disposal channels. Call anyway and get pointed in the right direction."}
+    },
+    {
+      "@type": "Question",
+      "name": "Do you serve areas outside Rector, AR?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes — Piggott, Marmaduke, Paragould, Kennett MO, and anywhere in Clay or Greene county is regular territory. For a good-sized job, farther is fine too."}
+    }
+  ]
 }
 </script>
 <style>
@@ -59,6 +100,7 @@
   }
 
   *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   body{
     margin:0;
     background:var(--ground);
@@ -149,11 +191,24 @@
     padding:56px 0 64px;
   }
   .hero .label{color:var(--accent);margin-bottom:18px;display:block}
+  .hero-flex{display:flex;gap:44px;align-items:center;flex-wrap:wrap}
+  .hero-flex .hero-txt{flex:1 1 420px}
+  .hero-flex .hero-pic{flex:1 1 260px;max-width:400px}
+  .ph.on-dark{
+    border-color:var(--hero-soft);
+    background:
+      repeating-linear-gradient(-45deg,
+        transparent 0 22px, rgba(255,255,255,.05) 22px 44px),
+      rgba(255,255,255,.04);
+  }
+  .ph.on-dark .label,.ph.on-dark small{color:var(--hero-soft)}
   .hero h1{
-    font-size:clamp(2.6rem,9vw,5.2rem);
+    font-size:clamp(2.1rem,9vw,5.2rem);
     color:var(--hero-ink);
   }
   .hero h1 .hl{color:var(--accent)}
+  /* below 540px the fixed line breaks fight natural wrapping */
+  @media (max-width:540px){ .hero h1 br{display:none} }
   .hero p.lede{
     max-width:34em;
     font-size:1.15rem;
@@ -302,21 +357,6 @@
   .page-head h1{font-size:clamp(2rem,6vw,3.4rem);color:var(--hero-ink)}
   .page-head p{color:var(--hero-soft);max-width:36em;margin:16px 0 0;font-size:1.05rem}
 
-  /* about */
-  .about-flex{display:flex;gap:32px;flex-wrap:wrap}
-  .about-flex .txt{flex:2 1 380px}
-  .about-flex .pic{flex:1 1 260px}
-  .values{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:10px}
-  .values li{
-    background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--accent);
-    padding:12px 16px;font-size:.97rem;
-  }
-  .values b{
-    font-family:'Helvetica Neue',Arial,sans-serif;font-weight:800;
-    text-transform:uppercase;letter-spacing:.05em;font-size:.85rem;
-    display:block;margin-bottom:2px;
-  }
-
   /* FAQ */
   .faq{max-width:46em}
   .faq details{
@@ -352,9 +392,6 @@
     border-bottom:3px solid var(--accent);
   }
   .contact-card .big:hover{color:var(--accent-deep)}
-  .hours{width:100%;border-collapse:collapse;font-size:.95rem}
-  .hours td{padding:5px 0;border-bottom:1px dotted var(--line)}
-  .hours td:last-child{text-align:right;font-family:'Helvetica Neue',Arial,sans-serif;font-weight:600;font-variant-numeric:tabular-nums}
 
   /* footer / big call-out */
   .foot-cta{
@@ -397,9 +434,7 @@
   <nav class="main" aria-label="Main navigation">
     <div class="wrap">
       <a href="#/home" data-nav="home">Home</a>
-      <a href="#/services" data-nav="services">Services</a>
-      <a href="#/work" data-nav="work">Our Work</a>
-      <a href="#/about" data-nav="about">About</a>
+      <a href="#/services" data-nav="services">Services &amp; Work</a>
       <a href="#/faq" data-nav="faq">FAQ</a>
       <a href="#/contact" data-nav="contact">Contact</a>
     </div>
@@ -409,15 +444,18 @@
 <!-- ================= HOME ================= -->
 <main class="page" id="page-home">
   <div class="hero">
-    <div class="wrap">
-      <span class="label">Junk Removal · Hauling · General Labor</span>
-      <h1 class="display">If it needs hauled,<br>lifted, or torn out —<br><span class="hl">call Diddle.</span></h1>
-      <p class="lede">Honest, show-up-on-time labor out of Rector, Arkansas. Junk hauled off, sheds emptied, brush cleared, and the odd jobs nobody else wants. You point at it, it's gone.</p>
-      <div class="cta-row">
-        <a class="btn-call" href="tel:+18705954718">Call (870) 595-4718</a>
-        <a class="btn-ghost" href="#/services">See services</a>
+    <div class="wrap hero-flex">
+      <div class="hero-txt">
+        <span class="label">Junk Removal · Hauling · General Labor</span>
+        <h1 class="display">If it needs hauled,<br>lifted, or torn out —<br><span class="hl">call Diddle.</span></h1>
+        <p class="lede">Honest, show-up-on-time labor out of Rector, Arkansas. Junk hauled off, sheds emptied, brush cleared, and the odd jobs nobody else wants. You point at it, it's gone.</p>
+        <div class="cta-row">
+          <a class="btn-call" href="tel:+18705954718">Call (870) 595-4718</a>
+          <a class="btn-ghost" href="#/services">See services</a>
+        </div>
+        <p class="cta-note" style="margin-top:16px">Texting works too — send a photo of the job for a fast quote.</p>
       </div>
-      <p class="cta-note" style="margin-top:16px">Texting works too — send a photo of the job for a fast quote.</p>
+      <figure class="ph tall on-dark hero-pic"><span class="label">Photo placeholder</span><small>Diddle with the truck</small></figure>
     </div>
   </div>
   <div class="trust">
@@ -495,7 +533,7 @@
         <figure class="ph"><span class="label">Photo placeholder</span><small>Full trailer load headed to the dump</small></figure>
         <figure class="ph"><span class="label">Photo placeholder</span><small>Brush pile cleared after the storm</small></figure>
       </div>
-      <p class="section-foot"><a class="text-link" href="#/work">See more of our work →</a></p>
+      <p class="section-foot"><a class="text-link" href="#/services">See more of our work →</a></p>
     </div>
   </section>
 
@@ -515,6 +553,7 @@
           <li>Greenway, AR</li><li>Pollard, AR</li>
           <li>St. Francis, AR</li><li>Kennett, MO</li>
         </ul>
+        <figure class="ph" style="margin-top:20px;aspect-ratio:16/9"><span class="label">Photo placeholder</span><small>Service area map</small></figure>
       </div>
     </div>
   </section>
@@ -524,9 +563,9 @@
 <main class="page" id="page-services">
   <div class="page-head">
     <div class="wrap">
-      <span class="label">Services</span>
+      <span class="label">Services &amp; Work</span>
       <h1 class="display">Everything on the truck</h1>
-      <p>The full rundown of what Diddle General Labor handles day in and day out. Every job gets a free estimate and a straight price before work starts.</p>
+      <p>The full rundown of what Diddle General Labor handles day in and day out — with job photos to prove it. Every job gets a free estimate and a straight price before work starts.</p>
     </div>
   </div>
   <div class="stripe" role="presentation"></div>
@@ -601,22 +640,15 @@
       <p class="section-foot"><a class="btn-call" style="box-shadow:5px 5px 0 rgba(0,0,0,.15)" href="tel:+18705954718">Get a free estimate</a></p>
     </div>
   </section>
-</main>
 
-<!-- ================= WORK / GALLERY ================= -->
-<main class="page" id="page-work">
-  <div class="page-head">
-    <div class="wrap">
-      <span class="label">Our Work</span>
-      <h1 class="display">Job photos</h1>
-      <p>Before-and-afters from around Clay and Greene counties. Photos are on their way — these are placeholders until the real ones are loaded in.</p>
-    </div>
-  </div>
   <div class="stripe" role="presentation"></div>
+
   <section>
     <div class="wrap">
-      <span class="label eyebrow">Before &amp; After</span>
-      <h2 class="display">Cleanouts</h2>
+      <span class="label eyebrow">The proof</span>
+      <h2 class="display">Job photos</h2>
+      <p class="section-intro">Before-and-afters from around Clay and Greene counties. Photos are on their way — these are placeholders until the real ones are loaded in.</p>
+      <h3 class="sub">Cleanouts — before &amp; after</h3>
       <div class="gallery" style="margin-bottom:44px">
         <figure class="ph"><span class="label">Photo placeholder</span><small>Garage cleanout — before</small></figure>
         <figure class="ph"><span class="label">Photo placeholder</span><small>Garage cleanout — after</small></figure>
@@ -625,54 +657,19 @@
         <figure class="ph"><span class="label">Photo placeholder</span><small>Barn cleanout — after</small></figure>
         <figure class="ph"><span class="label">Photo placeholder</span><small>Estate cleanout</small></figure>
       </div>
-      <span class="label eyebrow">On the road</span>
-      <h2 class="display">Hauling &amp; junk removal</h2>
+      <h3 class="sub">Hauling &amp; junk removal</h3>
       <div class="gallery" style="margin-bottom:44px">
         <figure class="ph"><span class="label">Photo placeholder</span><small>Full trailer load headed to the dump</small></figure>
         <figure class="ph"><span class="label">Photo placeholder</span><small>Appliance haul-off</small></figure>
         <figure class="ph"><span class="label">Photo placeholder</span><small>Scrap metal load</small></figure>
       </div>
-      <span class="label eyebrow">Outside</span>
-      <h2 class="display">Yard, brush &amp; demo</h2>
+      <h3 class="sub">Yard, brush &amp; demo</h3>
       <div class="gallery">
         <figure class="ph"><span class="label">Photo placeholder</span><small>Brush pile cleared after the storm</small></figure>
         <figure class="ph"><span class="label">Photo placeholder</span><small>Old deck tear-out</small></figure>
         <figure class="ph"><span class="label">Photo placeholder</span><small>Fence-row clearing</small></figure>
       </div>
       <p class="section-foot"><a class="btn-call" style="box-shadow:5px 5px 0 rgba(0,0,0,.15)" href="tel:+18705954718">Got a job like these? Call now</a></p>
-    </div>
-  </section>
-</main>
-
-<!-- ================= ABOUT ================= -->
-<main class="page" id="page-about">
-  <div class="page-head">
-    <div class="wrap">
-      <span class="label">About</span>
-      <h1 class="display">The man behind the truck</h1>
-      <p>One guy, one truck, and a simple promise: show up, work hard, charge fair.</p>
-    </div>
-  </div>
-  <div class="stripe" role="presentation"></div>
-  <section>
-    <div class="wrap about-flex">
-      <div class="txt">
-        <span class="label eyebrow">Rector born &amp; raised</span>
-        <h2 class="display">Work you can count on</h2>
-        <p>Diddle General Labor is a one-man operation based right here in Rector, Arkansas. Around here, your name is your reputation — and that's exactly how this business runs. When you call, you talk to the man who does the work. When a price gets quoted, that's the price. And when a job's promised for Tuesday, it happens Tuesday.</p>
-        <p>Most of the work is junk removal, cleanouts, and hauling, but "general labor" means what it says: if it takes a strong back, a truck, and somebody who doesn't quit until it's done, it's the kind of job this business was built for.</p>
-        <p>There's no office, no dispatcher, and no franchise fee baked into your bill. Just a local guy who'd rather earn a neighbor's trust than a one-time payday.</p>
-        <ul class="values">
-          <li><b>Show up</b>If a time gets set, the truck's in your drive at that time. Your day matters too.</li>
-          <li><b>Straight prices</b>The number you hear before the job is the number you pay after it. Period.</li>
-          <li><b>Leave it better</b>Every job ends with the site cleaner than it started — swept, raked, or hosed down.</li>
-          <li><b>Local first</b>Your money stays in Clay County, and your call gets answered by a neighbor.</li>
-        </ul>
-      </div>
-      <div class="pic">
-        <figure class="ph tall" style="margin-bottom:14px"><span class="label">Photo placeholder</span><small>Diddle with the truck</small></figure>
-        <figure class="ph"><span class="label">Photo placeholder</span><small>The rig, loaded up</small></figure>
-      </div>
     </div>
   </section>
 </main>
@@ -746,15 +743,6 @@
           <p>Texting a photo of the job is the fastest way to get a quote. If the call goes to voicemail, leave a message — I'm probably on a job and I return calls the same day.</p>
         </div>
         <div class="contact-card">
-          <h3>Working Hours</h3>
-          <table class="hours">
-            <tr><td>Monday – Friday</td><td>7 AM – 6 PM</td></tr>
-            <tr><td>Saturday</td><td>8 AM – 4 PM</td></tr>
-            <tr><td>Sunday</td><td>By arrangement</td></tr>
-          </table>
-          <p style="margin-top:10px">Storm cleanup and emergencies don't keep business hours — call whenever.</p>
-        </div>
-        <div class="contact-card">
           <h3>Based In</h3>
           <p><b>Rector, Arkansas</b><br>Serving Clay &amp; Greene counties and the Missouri Bootheel.</p>
           <p>Rector · Piggott · Marmaduke · Paragould · Greenway · Pollard · St. Francis · Kennett, MO</p>
@@ -790,24 +778,24 @@
     <nav aria-label="Footer navigation">
       <span class="label">Pages</span>
       <a href="#/home">Home</a>
-      <a href="#/services">Services</a>
-      <a href="#/work">Our Work</a>
-      <a href="#/about">About</a>
+      <a href="#/services">Services &amp; Work</a>
       <a href="#/faq">FAQ</a>
       <a href="#/contact">Contact</a>
     </nav>
     <div>
       <span class="label">Get in touch</span>
-      <p style="margin:0">Call/Text: <a href="tel:+18705954718" style="color:var(--hero-ink);font-weight:700;text-decoration:none">(870) 595-4718</a><br>Mon–Sat, early to late</p>
+      <p style="margin:0">Call/Text: <a href="tel:+18705954718" style="color:var(--hero-ink);font-weight:700;text-decoration:none">(870) 595-4718</a></p>
     </div>
   </div>
 </footer>
 
 <script>
   (function(){
-    var pages = ['home','services','work','about','faq','contact'];
+    var pages = ['home','services','faq','contact'];
+    var aliases = {work:'services', about:'home'};
     function current(){
       var h = location.hash.replace(/^#\/?/, '');
+      if(aliases[h]) h = aliases[h];
       return pages.indexOf(h) > -1 ? h : 'home';
     }
     function render(){
